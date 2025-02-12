@@ -1,0 +1,12 @@
+<h1>Dice Roll</h1> <!-- This must match exactly -->
+<p>Click a preset roll to try it:</p>
+
+<ul>
+  <% @preset_rolls.each do |roll| %>
+    <li>
+      <%= link_to "#{roll[:dice]}d#{roll[:sides]}", roll_dice_path(roll[:dice], roll[:sides]) %>
+    </li>
+  <% end %>
+</ul>
+
+<p>Or manually enter a URL like: <code>/dice/10/6</code></p>
